@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://futalune-studio.web.app/sitemap.xml
+Sitemap: sitemap.xml

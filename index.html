@@ -3,19 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>フタルネスタジオ | オンラインDTM・作曲レッスン教室</title>
-  <meta name="description" content="映画・アニメ・TVCM音楽を手掛ける現役プロが直接指導する、オンラインDTM・作曲レッスン教室「フタルネスタジオ」。感覚論ではなく「なぜそうなるか」を言語化し、生徒一人ひとりの専用カルテを作成してマンツーマンで伴走します。">
+  <title>フタルネスタジオ｜オンラインDTM・作曲レッスン教室（全国対応・西宮）</title>
+  <meta name="description" content="映画・アニメ・TVCMの現役プロ作曲家が直接指導するオンラインDTM・作曲教室「フタルネスタジオ」。Cubase/FL Studio/Logic対応。完全マンツーマン・個別カルテで初心者から劇伴・プロ志望まで伴走します。初回30分無料相談受付中。">
+  <meta name="keywords" content="DTM レッスン, 作曲 教室, DTM オンライン, 劇伴 作曲, 和声理論, Cubase レッスン, FL Studio レッスン, 西宮 音楽教室">
   
+  <!-- Canonical -->
+  <link rel="canonical" href="https://futalune-studio.web.app/">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="フタルネスタジオ | オンラインDTM・作曲レッスン教室">
-  <meta property="og:description" content="音楽の「どうすればいい？」を、確かな理論と実践でひとつずつ解決する。現役作編曲家による完全マンツーマン指導。">
+  <meta property="og:title" content="フタルネスタジオ｜オンラインDTM・作曲レッスン教室">
+  <meta property="og:description" content="映画・アニメ・TVCMを手掛ける現役プロが指導。完全マンツーマン＆生徒専用カルテで1曲完成まで伴走します。">
+  <meta property="og:site_name" content="フタルネスタジオ">
+  <meta property="og:url" content="https://futalune-studio.web.app/">
   <meta property="og:image" content="images/logo-dark.jpg">
 
   <!-- Favicon & Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- 構造化データ（JSON-LD） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "フタルネスタジオ",
+    "url": "https://futalune-studio.web.app/",
+    "description": "映画・アニメ・TVCM音楽を手掛ける現役作編曲家によるオンラインDTM・作曲レッスン教室",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "西宮市",
+      "addressRegion": "兵庫県",
+      "addressCountry": "JP"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "堀本 陸"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "単発スポットレッスン",
+        "price": "5500",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "name": "月2回 定期ステップアッププラン",
+        "price": "11000",
+        "priceCurrency": "JPY"
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -279,7 +320,7 @@
     .header-nav {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 22px;
       list-style: none;
     }
 
@@ -314,7 +355,7 @@
     }
 
     /* ============================================================
-       3. HERO SECTION (2-Column Layout with Studio Visual)
+       3. HERO SECTION (2-Column Layout with Studio Workspace Visual)
        ============================================================ */
     .hero-section {
       padding: 72px 0 84px;
@@ -353,12 +394,26 @@
     }
 
     .hero-title {
-      font-size: clamp(30px, 4vw, 44px);
+      font-size: clamp(22px, 2.75vw, 36px);
       font-weight: 900;
-      line-height: 1.35;
-      letter-spacing: -0.03em;
+      line-height: 1.48;
+      letter-spacing: -0.025em;
       color: var(--text-main);
       margin-bottom: 20px;
+    }
+
+    .title-line-1 {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .title-line-2 {
+      display: inline-block;
+    }
+
+    .phrase-chunk {
+      display: inline-block;
+      white-space: nowrap;
     }
 
     .hero-lead {
@@ -562,70 +617,363 @@
     }
 
     /* ============================================================
-       4. FEATURES & POLICIES (3 Modern Cards)
+       4. SECTION: PROBLEMS (お悩み)
        ============================================================ */
-    .section-features {
+    .section-problems {
       padding: 96px 0;
       background: #FFFFFF;
     }
 
-    .features-grid {
+    .problems-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-top: 48px;
     }
 
-    .feature-card {
+    .problem-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
       padding: 32px 28px;
+      transition: all 0.25s var(--ease-pm);
+      position: relative;
       display: flex;
       flex-direction: column;
-      transition: all 0.3s var(--ease-pm);
-      position: relative;
     }
-    .feature-card:hover {
-      background: var(--card-hover);
+    .problem-card:hover {
+      background: #FFFFFF;
       border-color: var(--border-focus);
-      transform: translateY(-4px);
       box-shadow: var(--shadow-float);
+      transform: translateY(-3px);
     }
 
-    .feature-card-num {
+    .problem-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .problem-num {
+      font-family: var(--font-en);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    .problem-category-badge {
+      font-family: var(--font-en);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--navy-subtle);
+      border: 1px solid #DBEAFE;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.04em;
+    }
+
+    .problem-catch {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .problem-title {
+      font-size: 18.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+
+    .problem-pain {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .problem-solution-box {
+      margin-top: auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card-sm);
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .solution-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--navy);
+      background: var(--navy-subtle);
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .solution-text {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       5. SECTION: FEATURES (4つの指導方針)
+       ============================================================ */
+    .section-features {
+      padding: 96px 0;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .features-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 52px;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 44px;
+      box-shadow: var(--shadow-subtle);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .feature-card:hover {
+      border-color: var(--border-focus);
+      box-shadow: var(--shadow-float);
+      transform: translateY(-2px);
+    }
+    .feature-card.reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .feature-point-tag {
+      font-family: var(--font-en);
       font-size: 11px;
       font-weight: 800;
       color: var(--navy);
       letter-spacing: 0.08em;
       margin-bottom: 14px;
-      display: inline-block;
-      font-family: var(--font-en);
+      background: var(--navy-subtle);
+      border: 1px solid #DBEAFE;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
     }
 
-    .feature-card-title {
-      font-size: 17.5px;
+    .feature-heading {
+      font-size: clamp(20px, 2.4vw, 24px);
       font-weight: 800;
       line-height: 1.45;
       color: var(--text-main);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      letter-spacing: -0.015em;
     }
 
-    .feature-card-desc {
-      font-size: 13.5px;
+    .feature-desc {
+      font-size: 14px;
       color: var(--text-sub);
-      line-height: 1.8;
-      flex-grow: 1;
+      line-height: 1.85;
+      margin-bottom: 22px;
+    }
+
+    .feature-subpoints {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .feature-subpoint-item {
+      font-size: 13px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .subpoint-check {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    /* Feature Visual Components */
+    .feature-visual-frame {
+      border-radius: var(--radius-card-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      position: relative;
+      box-shadow: var(--shadow-subtle);
+    }
+    .feature-visual-frame img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Custom Carte Mockup Inside Feature 02 */
+    .carte-mockup-panel {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card-sm);
+      padding: 26px;
+      box-shadow: var(--shadow-float);
+    }
+    .carte-doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .carte-doc-title {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .carte-doc-id {
+      font-family: var(--font-en);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .carte-field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 12px;
+    }
+    .carte-field-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 12px;
+    }
+    .carte-field-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+    .carte-field-value {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .carte-action-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      border-top: 1px dashed var(--border);
+      padding-top: 14px;
+    }
+    .carte-action-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-sub);
+    }
+
+    /* Discord Session Visual in Feature 03 */
+    .discord-mockup-panel {
+      background: #1E1F22;
+      border-radius: var(--radius-card-sm);
+      padding: 22px;
+      color: #F2F3F5;
+      font-size: 12px;
+      box-shadow: var(--shadow-float);
+    }
+    .discord-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
+    }
+    .discord-channel {
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .discord-badge {
+      font-family: var(--font-en);
+      font-size: 10px;
+      font-weight: 700;
+      background: #23A55A;
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.04em;
+    }
+    .discord-screen-area {
+      background: #2B2D31;
+      border-radius: 8px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .screen-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: #B5BAC1;
+    }
+    .screen-waveform {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 28px;
+    }
+    .wave-bar {
+      width: 4px;
+      background: #5865F2;
+      border-radius: 2px;
+      animation: wavePulse 1.2s ease-in-out infinite alternate;
+    }
+    @keyframes wavePulse {
+      0% { height: 6px; }
+      100% { height: 26px; }
     }
 
     /* ============================================================
-       5. PLANS & PRICING (Prompt Motion Minimal Pricing)
+       6. PLANS & PRICING (Prompt Motion Minimal Pricing)
        ============================================================ */
     .section-plans {
       padding: 96px 0;
-      background: var(--bg-subtle);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: #FFFFFF;
     }
 
     .plans-grid {
@@ -637,7 +985,7 @@
     }
 
     .plan-card {
-      background: #FFFFFF;
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
       padding: 36px 30px;
@@ -647,6 +995,7 @@
       transition: all 0.3s var(--ease-pm);
     }
     .plan-card:hover {
+      background: #FFFFFF;
       transform: translateY(-4px);
       box-shadow: var(--shadow-lift);
       border-color: var(--border-focus);
@@ -654,6 +1003,7 @@
 
     .plan-card.recommended {
       border: 2px solid var(--navy);
+      background: #FFFFFF;
       box-shadow: var(--shadow-float);
     }
 
@@ -752,11 +1102,13 @@
     }
 
     /* ============================================================
-       6. REVIEWS (ココナラ★5.0 実レビューカード)
+       7. REVIEWS (ココナラ★5.0 実レビューカード)
        ============================================================ */
     .section-reviews {
       padding: 96px 0;
-      background: #FFFFFF;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .reviews-grid {
@@ -767,7 +1119,7 @@
     }
 
     .review-card {
-      background: var(--card-bg);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
       padding: 26px 22px;
@@ -777,7 +1129,6 @@
       transition: all 0.25s var(--ease-pm);
     }
     .review-card:hover {
-      background: #FFFFFF;
       transform: translateY(-3px);
       box-shadow: var(--shadow-float);
       border-color: var(--border-focus);
@@ -817,13 +1168,11 @@
     }
 
     /* ============================================================
-       7. INSTRUCTOR & WORKS PROFILE (2-Column Unified Layout)
+       8. INSTRUCTOR & WORKS PROFILE (2-Column Unified Layout)
        ============================================================ */
     .section-instructor {
       padding: 96px 0;
-      background: var(--bg-subtle);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: #FFFFFF;
     }
 
     .instructor-layout {
@@ -950,7 +1299,7 @@
     }
 
     .instructor-message-quote {
-      background: #FFFFFF;
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-left: 3px solid var(--navy);
       padding: 16px 20px;
@@ -964,7 +1313,7 @@
 
     /* Integrated Works Block */
     .works-block {
-      background: #FFFFFF;
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
       padding: 24px 26px;
@@ -972,6 +1321,7 @@
       box-shadow: var(--shadow-subtle);
     }
     .works-block:hover {
+      background: #FFFFFF;
       box-shadow: var(--shadow-float);
       border-color: var(--border-focus);
     }
@@ -993,7 +1343,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--bg-subtle);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       padding: 4px 12px;
       border-radius: var(--radius-pill);
@@ -1049,7 +1399,7 @@
     .work-pill {
       font-size: 12.5px;
       color: var(--text-sub);
-      background: var(--card-bg);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       padding: 5px 12px;
       border-radius: var(--radius-pill);
@@ -1069,15 +1419,16 @@
     }
 
     /* ============================================================
-       8. CTA & BOOKING SECTION
+       9. CTA & BOOKING SECTION
        ============================================================ */
     .section-booking {
       padding: 96px 0 110px;
-      background: #FFFFFF;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border);
     }
 
     .booking-card {
-      background: var(--card-bg);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: var(--radius-card);
       padding: 56px 40px;
@@ -1102,7 +1453,7 @@
     }
 
     /* ============================================================
-       9. FOOTER
+       10. FOOTER
        ============================================================ */
     footer {
       background: #FFFFFF;
@@ -1126,6 +1477,29 @@
       gap: 12px;
     }
 
+    .footer-links-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-terms-link {
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: 12px;
+      transition: color 0.15s ease;
+    }
+    .footer-terms-link:hover {
+      color: var(--navy);
+    }
+
+    .footer-sep {
+      color: var(--border-focus);
+      font-size: 10px;
+    }
+
     /* ============================================================
        RESPONSIVE BREAKPOINTS
        ============================================================ */
@@ -1146,8 +1520,13 @@
         margin-top: 12px;
         display: inline-flex;
       }
-      .features-grid {
+      .problems-grid {
         grid-template-columns: 1fr;
+      }
+      .feature-card, .feature-card.reverse {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 24px;
       }
       .plans-grid {
         grid-template-columns: 1fr;
@@ -1169,6 +1548,10 @@
     @media (max-width: 640px) {
       .header-nav {
         display: none;
+      }
+      .hero-title {
+        font-size: clamp(20px, 5.5vw, 25px);
+        line-height: 1.42;
       }
       .booking-card {
         padding: 40px 24px;
@@ -1193,6 +1576,7 @@
 
       <nav>
         <ul class="header-nav">
+          <li><a href="#problems">お悩み</a></li>
           <li><a href="#features">指導方針</a></li>
           <li><a href="#plans">料金プラン</a></li>
           <li><a href="#reviews">受講生の声</a></li>
@@ -1200,7 +1584,7 @@
         </ul>
       </nav>
 
-      <a href="https://docs.google.com/forms/d/1ED0t8J5TzK4tdGsNO-L7H08ZnIWIEgPc4Ec0kAH6It8/viewform" target="_blank" rel="noopener noreferrer" class="header-cta-btn">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPX137wO-x92NvlJ1NBGsyqIWnErNToeTn_VSfOunYPD06fA/viewform" target="_blank" rel="noopener noreferrer" class="header-cta-btn">
         無料相談を予約
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1223,8 +1607,8 @@
             </div>
 
             <h1 class="hero-title">
-              音楽の「どうすればいい？」を、<br>
-              確かな理論と実践でひとつずつ解決する。
+              <span class="title-line-1">音楽の「どうすればいい？」を、</span><br>
+              <span class="title-line-2"><span class="phrase-chunk">確かな理論と実践で</span><span class="phrase-chunk">ひとつずつ解決する。</span></span>
             </h1>
 
             <p class="hero-lead">
@@ -1232,11 +1616,11 @@
             </p>
 
             <div class="hero-actions">
-              <a href="https://docs.google.com/forms/d/1ED0t8J5TzK4tdGsNO-L7H08ZnIWIEgPc4Ec0kAH6It8/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-primary">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPX137wO-x92NvlJ1NBGsyqIWnErNToeTn_VSfOunYPD06fA/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-primary">
                 30分 無料カウンセリングを予約
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="#plans" class="btn-pill-secondary">プランを見る</a>
+              <a href="#plans" class="btn-pill-secondary">料金・プランを見る</a>
             </div>
 
             <!-- Supported DAW Tags (@LexnLin Interactive Pill Tags) -->
@@ -1298,56 +1682,286 @@
     </section>
 
     <!-- ============================================================
-         3. FEATURES & POLICIES (3 Modern Cards)
+         3. SECTION: PROBLEMS (こんなお悩みはありませんか？)
          ============================================================ -->
-    <section class="section-features" id="features">
+    <section class="section-problems" id="problems">
       <div class="container">
         <div class="text-center reveal-on-scroll">
-          <span class="section-eyebrow">Features</span>
-          <h2 class="section-title">フタルネスタジオの指導方針</h2>
+          <span class="section-eyebrow">01. Problems</span>
+          <h2 class="section-title">こんなお悩みはありませんか？</h2>
           <p class="section-desc">
-            「感覚」で終わらせず、理論と現場の実務で一生モノの音楽制作スキルを身につけます。
+            作曲やDTMは、最初に越えるべきハードルが数多く存在します。<br>独学で立ち止まってしまう原因を、マンツーマンでひとつずつ解きほぐします。
           </p>
         </div>
 
-        <div class="features-grid">
-          <!-- Card 01 -->
-          <div class="feature-card reveal-on-scroll">
-            <span class="feature-card-num">CARD 01</span>
-            <h3 class="feature-card-title">感覚論ではなく「なぜそうなるか」を分かりやすく言語化</h3>
-            <p class="feature-card-desc">
-              音大出身の和声法・音楽理論に基づき、「なぜこのコードだと響きが良いのか」「なぜメロディがぶつかるのか」を直感的に解説。曖昧な感覚ではなく確かなロジックで理解できます。
+        <div class="problems-grid">
+          <!-- Problem 01 -->
+          <div class="problem-card reveal-on-scroll">
+            <div class="problem-card-top">
+              <span class="problem-num">01 / DAW OPERATION</span>
+              <span class="problem-category-badge">操作の迷子</span>
+            </div>
+            <h3 class="problem-title">ソフトの操作でつまずいている</h3>
+            <p class="problem-pain">
+              DAWソフトを購入したものの、画面に並ぶ膨大なボタンや専門用語の多さに圧倒され、どこから手を付けて曲を組み立てればいいのか分からない。
             </p>
+            <div class="problem-solution-box">
+              <span class="solution-tag">解決法</span>
+              <div class="solution-text">
+                「あなたの作りたい曲」に必要な最小限の操作フローだけを整理。無駄な遠回りをなくし、最短で曲が形になる土台を作ります。
+              </div>
+            </div>
           </div>
 
-          <!-- Card 02 -->
-          <div class="feature-card reveal-on-scroll">
-            <span class="feature-card-num">CARD 02</span>
-            <h3 class="feature-card-title">生徒ごとの「専用レッスンカルテ」を作成</h3>
-            <p class="feature-card-desc">
-              「○月までに1曲完成させたい」「ボカロPになりたい」など、個別の目標に合わせた専用カルテを作成し、毎回の課題と進捗を可視化。途中で挫折させない仕組みを整えています。
+          <!-- Problem 02 -->
+          <div class="problem-card reveal-on-scroll">
+            <div class="problem-card-top">
+              <span class="problem-num">02 / HARMONY &amp; CHORDS</span>
+              <span class="problem-category-badge">コードの壁</span>
+            </div>
+            <h3 class="problem-title">コードや伴奏の付け方が分からない</h3>
+            <p class="problem-pain">
+              頭の中に素敵なメロディや鼻歌はあるのに、それに合うコード進行やベースラインの選び方が分からず、曲として完成させられない。
             </p>
+            <div class="problem-solution-box">
+              <span class="solution-tag">解決法</span>
+              <div class="solution-text">
+                鍵盤の指癖や当てずっぽうではなく、「なぜこのコードが響くのか」の理論を平易な言葉で伝授。鼻歌に伴奏をつけるコツを掴めます。
+              </div>
+            </div>
           </div>
 
-          <!-- Card 03 -->
-          <div class="feature-card reveal-on-scroll">
-            <span class="feature-card-num">CARD 03</span>
-            <h3 class="feature-card-title">Discordによる画面・高音質音声共有</h3>
-            <p class="feature-card-desc">
-              受講者側のDAWの生音をクリアに聴き取りながら進行。自宅にいながら同じスタジオの隣の席で画面を見ながら教えてもらっているような、ストレスフリーな受講環境です。
+          <!-- Problem 03 -->
+          <div class="problem-card reveal-on-scroll">
+            <div class="problem-card-top">
+              <span class="problem-num">03 / SELF STUDY</span>
+              <span class="problem-category-badge">独学の限界</span>
+            </div>
+            <h3 class="problem-title">独学の動画に限界を感じている</h3>
+            <p class="problem-pain">
+              YouTubeなどのチュートリアル動画を真似して作れても、いざ「自分のオリジナル曲」を作ろうとした途端に応用できずペンが止まってしまう。
             </p>
+            <div class="problem-solution-box">
+              <span class="solution-tag">解決法</span>
+              <div class="solution-text">
+                生徒さんのプロジェクト画面を共有しながら直接添削。「あなたの曲のここを直すと劇的に良くなる」具体的な改善点を提示します。
+              </div>
+            </div>
+          </div>
+
+          <!-- Problem 04 -->
+          <div class="problem-card reveal-on-scroll">
+            <div class="problem-card-top">
+              <span class="problem-num">04 / FILM &amp; COMMERCIAL</span>
+              <span class="problem-category-badge">プロ志望</span>
+            </div>
+            <h3 class="problem-title">劇伴・ストリングスアレンジを学びたい</h3>
+            <p class="problem-pain">
+              映画音楽、アニメBGM、ゲームの壮大なオーケストラアレンジなど、商業音楽現場で通用する本格的なスコアリングの技術をプロから直接学びたい。
+            </p>
+            <div class="problem-solution-box">
+              <span class="solution-tag">解決法</span>
+              <div class="solution-text">
+                国内外の映画祭ノミネート作品やTVアニメを手掛ける現役作編曲家が、ストリングスのボイシングから映像同期まで現場基準で指導します。
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         4. PLANS & PRICING (Prompt Motion Minimal Pricing)
+         4. SECTION: FEATURES (フタルネスタジオ 4つの指導方針)
+         ============================================================ -->
+    <section class="section-features" id="features">
+      <div class="container">
+        <div class="text-center reveal-on-scroll">
+          <span class="section-eyebrow">02. Features</span>
+          <h2 class="section-title">フタルネスタジオ 4つの指導方針</h2>
+          <p class="section-desc">
+            感覚論に頼らず、「なぜそうなるか」を納得しながら一生モノのスキルを身につけるための環境を整えています。
+          </p>
+        </div>
+
+        <div class="features-stack">
+          <!-- Feature 1 -->
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-content">
+              <span class="feature-point-tag">POINT 01</span>
+              <h3 class="feature-heading">感覚論ではなく「なぜそうなるか」を<br>分かりやすく言語化</h3>
+              <p class="feature-desc">
+                「なんとなく良い感じにする」という曖昧な教え方はしません。音大出身の体系的な和声・音楽理論に基づき、「なぜこのコードだと心地よく響くのか」「なぜ音が濁ってぶつかるのか」を初心者の方にも直感的に納得できるよう、言葉と音で丁寧に解説します。
+              </p>
+              <ul class="feature-subpoints">
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 難解な専門用語を日常のたとえに噛み砕いて解説
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 楽譜が読めなくてもDAWのピアノロール画面で直感理解
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 生涯使える「曲の骨組みを作るロジック」を習得
+                </li>
+              </ul>
+            </div>
+
+            <div class="feature-visual-frame">
+              <img src="images/theory-score.jpg" alt="クラシックな和声理論とスコア・楽譜の筆記" width="600" height="300" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card reverse reveal-on-scroll">
+            <div class="carte-mockup-panel">
+              <div class="carte-doc-header">
+                <div>
+                  <div class="carte-doc-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    FutaLune Studio 個別レッスンカルテ
+                  </div>
+                  <div class="carte-doc-id">STUDENT-ID: #FL-2026-088</div>
+                </div>
+                <span class="studio-loc-tag" style="background: var(--navy); color: #FFFFFF; border: none;">
+                  専用シート発行
+                </span>
+              </div>
+              <div class="carte-field-grid">
+                <div class="carte-field-box">
+                  <div class="carte-field-title">受講目的</div>
+                  <div class="carte-field-value">アニメ風BGM・オリジナル1曲完成</div>
+                </div>
+                <div class="carte-field-box">
+                  <div class="carte-field-title">使用DAW</div>
+                  <div class="carte-field-value">Cubase Pro 13</div>
+                </div>
+                <div class="carte-field-box">
+                  <div class="carte-field-title">現在の課題</div>
+                  <div class="carte-field-value">サビのコード進行とベースの跳躍</div>
+                </div>
+                <div class="carte-field-box">
+                  <div class="carte-field-title">次回目標</div>
+                  <div class="carte-field-value">リズム隊の打ち込みと音色選定</div>
+                </div>
+              </div>
+              <ul class="carte-action-list">
+                <li class="carte-action-item">
+                  <span style="color: var(--green-live); font-weight: bold;">[完了]</span> Aメロのトップノート配置とテンションコード解決
+                </li>
+                <li class="carte-action-item">
+                  <span style="color: var(--navy); font-weight: bold;">[宿題]</span> 8小節のリファレンス曲構成をカルテ参照でコピー
+                </li>
+              </ul>
+            </div>
+
+            <div class="feature-content">
+              <span class="feature-point-tag">POINT 02</span>
+              <h3 class="feature-heading">生徒一人ひとりの目標に合わせた<br>「個別カルテ」を作成</h3>
+              <p class="feature-desc">
+                「2ヶ月でボカロ曲を完成させたい」「ストリングスの音圧を出したい」「コード進行を基礎から網羅したい」など、目指す場所は十人十色です。生徒様専用のカルテを作成し、毎回の進捗と課題、次回までの宿題を可視化。途中で迷子にならず、着実に成長を実感できます。
+              </p>
+              <ul class="feature-subpoints">
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 毎回のレッスン終了後にカルテを更新して共有
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 「前回どこまでやったか」が一目で分かるロードマップ
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 次回までの自習課題が明確だから挫折しない
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card reveal-on-scroll">
+            <div class="feature-content">
+              <span class="feature-point-tag">POINT 03</span>
+              <h3 class="feature-heading">Discordによる画面・高音質音声<br>リアルタイム共有レッスン</h3>
+              <p class="feature-desc">
+                Discordの高ビットレート音声配信と画面共有を活用し、受講生側のDAWの生音をそのままクリアに聴き取りながら指導します。まるで同じスタジオの隣の席で画面を見ながら教えてもらっているような臨場感で、疑問点をその場で解決できます。
+              </p>
+              <ul class="feature-subpoints">
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> DAWのステレオ音声をノイズなしで高音質共有
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 自宅にいながらスタジオクオリティの受講感
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> プラグインやミキサー画面を一緒に見ながら微調整
+                </li>
+              </ul>
+            </div>
+
+            <div class="discord-mockup-panel">
+              <div class="discord-bar">
+                <div class="discord-channel">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                  フタルネスタジオ / レッスンルーム #1
+                </div>
+                <span class="discord-badge">HIGH QUALITY STEREO</span>
+              </div>
+              <div class="discord-screen-area">
+                <div class="screen-status-row">
+                  <span>DAW画面ライブ共有中（Cubase / Logic / FL）</span>
+                  <span style="color: #23A55A; font-weight: 700;">● 60 FPS / 384 kbps</span>
+                </div>
+                <div class="screen-waveform" aria-hidden="true">
+                  <div class="wave-bar" style="animation-delay: 0.1s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.3s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.2s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.5s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.4s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.6s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.2s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.5s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.1s;"></div>
+                  <div class="wave-bar" style="animation-delay: 0.4s;"></div>
+                </div>
+                <div style="font-size: 11px; color: #949BA4; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">
+                  「講師側で同じMIDIノートを鳴らしながら、響きの違いをリアルタイム検証します」
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card reverse reveal-on-scroll">
+            <div class="feature-visual-frame">
+              <img src="images/composer-session.jpg" alt="現役プロ作曲家のDAW実務セッション" width="600" height="300" loading="lazy">
+            </div>
+
+            <div class="feature-content">
+              <span class="feature-point-tag">POINT 04</span>
+              <h3 class="feature-heading">商業音楽の第一線で培った<br>現場実務ノウハウの提供</h3>
+              <p class="feature-desc">
+                アニメ・映画・TVCMの第一線で実際に楽曲を納品しているからこそ分かる、音圧やミックスの現場基準、映像に寄り添うフィルムスコアリングのノウハウ、オーケストレーションの実務を惜しみなく提供します。
+              </p>
+              <ul class="feature-subpoints">
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> プリキュアやアイマス、映画音楽を手掛けるプロの直接指導
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 「聴き映えする音色選び」と「濁らない帯域整理」
+                </li>
+                <li class="feature-subpoint-item">
+                  <span class="subpoint-check">✓</span> 劇伴・BGMコンペで選ばれるための実践的アレンジ術
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. PLANS & PRICING (Prompt Motion Minimal Pricing)
          ============================================================ -->
     <section class="section-plans" id="plans">
       <div class="container">
         <div class="text-center reveal-on-scroll">
-          <span class="section-eyebrow">Pricing</span>
+          <span class="section-eyebrow">03. Pricing</span>
           <h2 class="section-title">レッスンプラン</h2>
           <p class="section-desc">
             入会金・教材費は一切不要（0円）。目的に合わせて都度払いまたは月謝制から自由に選べます。
@@ -1369,7 +1983,7 @@
               <li class="plan-feature-item">DAW操作や音源プラグインの疑問解決</li>
               <li class="plan-feature-item">必要な時だけ1回単位で予約可能</li>
             </ul>
-            <a href="https://docs.google.com/forms/d/1ED0t8J5TzK4tdGsNO-L7H08ZnIWIEgPc4Ec0kAH6It8/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary" style="width: 100%;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPX137wO-x92NvlJ1NBGsyqIWnErNToeTn_VSfOunYPD06fA/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary" style="width: 100%;">
               このプランで申し込む
             </a>
           </div>
@@ -1390,7 +2004,7 @@
               <li class="plan-feature-item">レッスン外でのDiscordチャット質問対応</li>
               <li class="plan-feature-item">前日までのご連絡で柔軟な日程振替に対応</li>
             </ul>
-            <a href="https://docs.google.com/forms/d/1ED0t8J5TzK4tdGsNO-L7H08ZnIWIEgPc4Ec0kAH6It8/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-navy" style="width: 100%;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPX137wO-x92NvlJ1NBGsyqIWnErNToeTn_VSfOunYPD06fA/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-navy" style="width: 100%;">
               このプランで申し込む
             </a>
           </div>
@@ -1411,7 +2025,7 @@
               <li class="plan-feature-item">レッスン外での質問・音源チェック優先対応</li>
               <li class="plan-feature-item">配信リリースやコンペ提出に向けた仕上げ指導</li>
             </ul>
-            <a href="https://docs.google.com/forms/d/1ED0t8J5TzK4tdGsNO-L7H08ZnIWIEgPc4Ec0kAH6It8/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary" style="width: 100%;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPX137wO-x92NvlJ1NBGsyqIWnErNToeTn_VSfOunYPD06fA/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary" style="width: 100%;">
               このプランで申し込む
             </a>
           </div>
@@ -1420,12 +2034,12 @@
     </section>
 
     <!-- ============================================================
-         5. REVIEWS (ココナラ★5.0 実レビュー抜粋カード)
+         6. REVIEWS (ココナラ★5.0 実レビュー抜粋カード)
          ============================================================ -->
     <section class="section-reviews" id="reviews">
       <div class="container">
         <div class="text-center reveal-on-scroll">
-          <span class="section-eyebrow">Reviews</span>
+          <span class="section-eyebrow">04. Reviews</span>
           <h2 class="section-title">受講生からの実際の声</h2>
           <p class="section-desc">
             スキルマーケット「ココナラ」にて最高評価★5.0を継続獲得。実際に受講された生徒様からのレビュー抜粋です。
@@ -1493,12 +2107,12 @@
     </section>
 
     <!-- ============================================================
-         6. INSTRUCTOR & WORKS PROFILE (2-Column Unified Layout)
+         7. INSTRUCTOR & WORKS PROFILE (2-Column Unified Layout)
          ============================================================ -->
     <section class="section-instructor" id="instructor">
       <div class="container">
         <div class="text-center reveal-on-scroll">
-          <span class="section-eyebrow">Instructor &amp; Works</span>
+          <span class="section-eyebrow">05. Instructor &amp; Works</span>
           <h2 class="section-title">教室代表・メイン講師</h2>
           <p class="section-desc">
             体系的なアカデミック音楽理論と、商業音楽の第一線での実務ノウハウ。
@@ -1590,27 +2204,30 @@
     </section>
 
     <!-- ============================================================
-         7. CTA & BOOKING SECTION
+         8. CTA & BOOKING SECTION
          ============================================================ -->
     <section class="section-booking" id="apply">
       <div class="container-narrow">
         <div class="booking-card reveal-on-scroll">
-          <span class="section-eyebrow" style="margin-bottom: 20px;">Free Counseling</span>
+          <span class="section-eyebrow" style="margin-bottom: 20px;">06. Free Counseling</span>
           <h2 class="booking-title">まずは30分、あなたの曲の悩みをお聞かせください。</h2>
           <p class="booking-desc">
             機材選びや初歩的なご相談だけでも歓迎です。無理な勧誘は一切ございません。以下のフォームよりお気軽にご送信ください。
           </p>
-          <a href="https://docs.google.com/forms/d/1ED0t8J5TzK4tdGsNO-L7H08ZnIWIEgPc4Ec0kAH6It8/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-navy" style="font-size: 15px; padding: 15px 36px;">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPX137wO-x92NvlJ1NBGsyqIWnErNToeTn_VSfOunYPD06fA/viewform" target="_blank" rel="noopener noreferrer" class="btn-pill-navy" style="font-size: 15px; padding: 15px 36px;">
             30分 無料カウンセリングを申し込む
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <p style="margin-top: 18px; font-size: 11.5px; color: var(--text-light);">
+            ※受講規約・キャンセル規定は <a href="https://docs.google.com/document/d/15w3Rzo7MYqtSf007ikQ5TfRtgGhPLddbUfgVhLE2wB8/edit?tab=t.0#heading=h.8256gu3ew6ax" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px;">利用規約</a> よりご確認いただけます
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ============================================================
-       8. FOOTER
+       9. FOOTER
        ============================================================ -->
   <footer>
     <div class="container footer-inner">
@@ -1621,8 +2238,10 @@
       <div>
         代表：riku | 完全マンツーマン・全国オンライン対応
       </div>
-      <div>
-        &copy; 2026 FutaLune Studio. All Rights Reserved.
+      <div class="footer-links-row">
+        <a href="https://docs.google.com/document/d/15w3Rzo7MYqtSf007ikQ5TfRtgGhPLddbUfgVhLE2wB8/edit?tab=t.0#heading=h.8256gu3ew6ax" target="_blank" rel="noopener noreferrer" class="footer-terms-link">利用規約</a>
+        <span class="footer-sep">•</span>
+        <span>&copy; 2026 FutaLune Studio. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
