@@ -1446,36 +1446,186 @@
       line-height: 1.8;
     }
 
+    /* SNS & External Platform Links */
+    .instructor-sns-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sns-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-decoration: none;
+      transition: all 0.2s var(--ease-pm);
+    }
+    .sns-pill:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: var(--navy-subtle);
+      transform: translateY(-1px);
+    }
+
+    /* Other Platforms in Booking */
+    .other-platforms-box {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .other-platforms-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .platform-pills-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .platform-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-sub);
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.2s var(--ease-pm);
+      text-decoration: none;
+    }
+    .platform-pill:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+      transform: translateY(-1.5px);
+      box-shadow: var(--shadow-float);
+    }
+    .platform-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .platform-dot.jmty-dot {
+      background: #10B981;
+    }
+
     /* ============================================================
        10. FOOTER
        ============================================================ */
     footer {
       background: #FFFFFF;
       border-top: 1px solid var(--border);
-      padding: 48px 0;
+      padding: 52px 0 36px;
       font-size: 12.5px;
       color: var(--text-muted);
     }
 
-    .footer-inner {
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .footer-top-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 28px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .footer-logo-row {
       display: flex;
       align-items: center;
       gap: 12px;
+      font-weight: 700;
+      color: var(--text-main);
     }
 
-    .footer-links-row {
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-channels-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-channels-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: var(--font-en);
+    }
+
+    .footer-channels-list {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
+    }
+
+    .footer-channel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-decoration: none;
+      transition: all 0.2s var(--ease-pm);
+    }
+    .footer-channel-link:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+      background: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .footer-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
     }
 
     .footer-terms-link {
@@ -1492,6 +1642,7 @@
     .footer-sep {
       color: var(--border-focus);
       font-size: 10px;
+      margin: 0 4px;
     }
 
     /* ============================================================
@@ -1550,9 +1701,11 @@
       .booking-card {
         padding: 40px 24px;
       }
-      .footer-inner {
+      .footer-top-row,
+      .footer-bottom-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 16px;
       }
     }
   </style>
@@ -1661,14 +1814,14 @@
               </div>
             </div>
 
-            <!-- Floating Trust Rating Card -->
-            <div class="floating-card-rating">
+            <!-- Floating Trust Rating Card (Linked to Coconala) -->
+            <a href="https://coconala.com/services/3625224" target="_blank" rel="noopener noreferrer" class="floating-card-rating" title="ココナラ公式出品ページ（★5.0）を見る">
               <div class="rating-stars">★★★★★</div>
               <div>
-                <div class="rating-label">5.0 / 満点評価</div>
+                <div class="rating-label">5.0 / 満点評価 ↗</div>
                 <div class="rating-sub">ココナラ公式レビュー実績</div>
               </div>
-            </div>
+            </a>
           </div>
 
         </div>
@@ -2097,6 +2250,13 @@
             </div>
           </div>
         </div>
+
+        <div class="text-center reveal-on-scroll" style="margin-top: 36px;">
+          <a href="https://coconala.com/services/3625224" target="_blank" rel="noopener noreferrer" class="btn-pill-secondary" style="font-size: 13px; gap: 8px;">
+            <span>ココナラで全レビュー・出品詳細を見る</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -2132,7 +2292,16 @@
           <div class="instructor-details reveal-on-scroll">
             <div class="instructor-header-row">
               <span class="instructor-role">REPRESENTATIVE &amp; COMPOSER</span>
-              <img src="images/logo.png" alt="FutaLune Studio" style="height: 16px; width: auto; opacity: 0.75;">
+              <div class="instructor-sns-links">
+                <a href="https://x.com/Futalunestudio" target="_blank" rel="noopener noreferrer" class="sns-pill" aria-label="X (Twitter)">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <span>@Futalunestudio</span>
+                </a>
+                <a href="https://note.com/futalunestudio" target="_blank" rel="noopener noreferrer" class="sns-pill" aria-label="note">
+                  <span style="font-weight: 800; font-size: 11px; letter-spacing: -0.5px;">note</span>
+                  <span>公式note</span>
+                </a>
+              </div>
             </div>
 
             <div class="instructor-name-row">
@@ -2212,6 +2381,23 @@
             30分 無料カウンセリングを申し込む
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+
+          <div class="other-platforms-box">
+            <span class="other-platforms-label">各種プラットフォーム経由でもご相談・お申し込みいただけます</span>
+            <div class="platform-pills-row">
+              <a href="https://coconala.com/services/3625224" target="_blank" rel="noopener noreferrer" class="platform-pill">
+                <span class="platform-dot"></span>
+                <span>ココナラで相談・購入</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+              <a href="https://jmty.jp/hyogo/les-mus/article-1sdmhb" target="_blank" rel="noopener noreferrer" class="platform-pill">
+                <span class="platform-dot jmty-dot"></span>
+                <span>ジモティーで問い合わせ</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
           <p style="margin-top: 18px; font-size: 11.5px; color: var(--text-light);">
             ※受講規約・キャンセル規定は <a href="https://docs.google.com/document/d/15w3Rzo7MYqtSf007ikQ5TfRtgGhPLddbUfgVhLE2wB8/edit?tab=t.0#heading=h.8256gu3ew6ax" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px;">利用規約</a> よりご確認いただけます
           </p>
@@ -2224,18 +2410,48 @@
        9. FOOTER
        ============================================================ -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo-row">
-        <img src="images/logo.png" alt="FutaLune Studio" style="height: 22px; width: auto;">
-        <span>オンライン DTM・作曲レッスン教室</span>
+    <div class="container footer-content">
+      <div class="footer-top-row">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="images/logo.png" alt="FutaLune Studio" style="height: 22px; width: auto;">
+            <span>FutaLune Studio</span>
+          </div>
+          <p class="footer-tagline">オンライン DTM・作曲レッスン教室 ｜ 完全マンツーマン・全国対応</p>
+        </div>
+
+        <div class="footer-channels-group">
+          <span class="footer-channels-label">Official Channels &amp; Platforms</span>
+          <div class="footer-channels-list">
+            <a href="https://x.com/Futalunestudio" target="_blank" rel="noopener noreferrer" class="footer-channel-link" aria-label="公式X (Twitter)">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span>X (Twitter)</span>
+            </a>
+            <a href="https://note.com/futalunestudio" target="_blank" rel="noopener noreferrer" class="footer-channel-link" aria-label="公式note">
+              <span style="font-weight: 800; font-size: 11px;">note</span>
+              <span>note</span>
+            </a>
+            <a href="https://coconala.com/services/3625224" target="_blank" rel="noopener noreferrer" class="footer-channel-link" aria-label="ココナラ">
+              <span class="platform-dot" style="width: 6px; height: 6px;"></span>
+              <span>ココナラ</span>
+            </a>
+            <a href="https://jmty.jp/hyogo/les-mus/article-1sdmhb" target="_blank" rel="noopener noreferrer" class="footer-channel-link" aria-label="ジモティー">
+              <span class="platform-dot jmty-dot" style="width: 6px; height: 6px;"></span>
+              <span>ジモティー</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div>
-        代表：riku | 完全マンツーマン・全国オンライン対応
-      </div>
-      <div class="footer-links-row">
-        <a href="https://docs.google.com/document/d/15w3Rzo7MYqtSf007ikQ5TfRtgGhPLddbUfgVhLE2wB8/edit?tab=t.0#heading=h.8256gu3ew6ax" target="_blank" rel="noopener noreferrer" class="footer-terms-link">利用規約</a>
-        <span class="footer-sep">•</span>
-        <span>&copy; 2026 FutaLune Studio. All Rights Reserved.</span>
+
+      <div class="footer-bottom-row">
+        <div>
+          代表：riku <span class="footer-sep">•</span> 作編曲家・オンライン専任
+        </div>
+        <div>
+          <a href="https://docs.google.com/document/d/15w3Rzo7MYqtSf007ikQ5TfRtgGhPLddbUfgVhLE2wB8/edit?tab=t.0#heading=h.8256gu3ew6ax" target="_blank" rel="noopener noreferrer" class="footer-terms-link">利用規約</a>
+          <span class="footer-sep">•</span>
+          <span>&copy; 2026 FutaLune Studio. All Rights Reserved.</span>
+        </div>
       </div>
     </div>
   </footer>
